@@ -15,7 +15,9 @@ import time
 import math
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 import loguru
 import tqdm
 
@@ -207,6 +209,7 @@ class LaneNetTusimpleTrainer(object):
             self._summary_writer = tf.summary.FileWriter(self._tboard_save_dir, graph=self._sess.graph)
 
         LOG.info('Initialize tusimple lanenet trainner complete')
+        LOG.info('Model: {:s}, Batch size: {:d}, Init LR: {:.4f}'.format(self._model_name, self._batch_size, self._init_learning_rate))
 
     def _compute_warmup_lr(self, warmup_steps, name):
         """
@@ -252,9 +255,7 @@ class LaneNetTusimpleTrainer(object):
             train_epoch_losses = []
             train_epoch_mious = []
             traindataset_pbar = tqdm.tqdm(range(1, self._steps_per_epoch))
-
             for _ in traindataset_pbar:
-
                 if self._enable_miou and epoch % self._record_miou_epoch == 0:
                     _, _, summary, train_step_loss, train_step_binary_loss, \
                         train_step_instance_loss, global_step_val = \
@@ -293,7 +294,7 @@ class LaneNetTusimpleTrainer(object):
                             train_step_loss, train_step_binary_loss, train_step_instance_loss
                         )
                     )
-
+            LOG.info(train_epoch_losses)
             train_epoch_losses = np.mean(train_epoch_losses)
             if self._enable_miou and epoch % self._record_miou_epoch == 0:
                 train_epoch_mious = np.mean(train_epoch_mious)

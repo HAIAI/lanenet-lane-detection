@@ -15,7 +15,8 @@ import os.path as ops
 import random
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import loguru
 
 from local_utils.config_utils import parse_config_utils

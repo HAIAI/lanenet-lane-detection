@@ -1,4 +1,5 @@
-ROOT_PATH/lanenet-lane-detection/data/training_data_example/image/0000.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_binary_image/0000.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_instance_image/0000.png
-ROOT_PATH/lanenet-lane-detection/data/training_data_example/image/0001.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_binary_image/0001.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_instance_image/0001.png
-ROOT_PATH/lanenet-lane-detection/data/training_data_example/image/0002.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_binary_image/0002.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_instance_image/0002.png
-ROOT_PATH/lanenet-lane-detection/data/training_data_example/image/0003.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_binary_image/0000.png ROOT_PATH/lanenet-lane-detection/data/training_data_example/gt_instance_image/0003.png
+./data/training_data_example/gt_image/0001.png ./data/training_data_example/gt_binary_image/0001.png ./data/training_data_example/gt_instance_image/0001.png
+./data/training_data_example/gt_image/0005.png ./data/training_data_example/gt_binary_image/0005.png ./data/training_data_example/gt_instance_image/0005.png
+./data/training_data_example/gt_image/0000.png ./data/training_data_example/gt_binary_image/0000.png ./data/training_data_example/gt_instance_image/0000.png
+./data/training_data_example/gt_image/0004.png ./data/training_data_example/gt_binary_image/0004.png ./data/training_data_example/gt_instance_image/0004.png
+./data/training_data_example/gt_image/0002.png ./data/training_data_example/gt_binary_image/0002.png ./data/training_data_example/gt_instance_image/0002.png

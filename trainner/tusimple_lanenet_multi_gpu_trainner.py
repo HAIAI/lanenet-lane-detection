@@ -15,7 +15,9 @@ import time
 import math
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 import loguru
 import tqdm
 
@@ -286,6 +288,7 @@ class LaneNetTusimpleMultiTrainer(object):
             self._summary_writer = tf.summary.FileWriter(self._tboard_save_dir, graph=self._sess.graph)
 
         LOG.info('Initialize tusimple lanenet multi gpu trainner complete')
+        LOG.info('Model: {:s}, GPU nums: {:d}, Batch size: {:d}, Init LR: {:.4f}'.format(self._model_name, self._gpu_nums, self._batch_size, self._init_learning_rate))
 
     @staticmethod
     def _average_gradients(tower_grads):

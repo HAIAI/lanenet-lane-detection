@@ -8,8 +8,8 @@
 """
 Calculate model's fp fn and precision
 """
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 def calculate_model_precision(input_tensor, label_tensor):
     """

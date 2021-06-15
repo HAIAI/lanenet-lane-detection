@@ -8,8 +8,8 @@
 """
 LaneNet backend branch which is mainly used for binary and instance segmentation loss calculation
 """
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from lanenet_model import lanenet_discriminative_loss
 from semantic_segmentation_zoo import cnn_basenet
 

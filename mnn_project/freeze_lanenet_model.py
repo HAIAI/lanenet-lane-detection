@@ -14,8 +14,8 @@ from __future__ import print_function
 
 import argparse
 
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from lanenet_model import lanenet
 from local_utils.config_utils import parse_config_utils
 

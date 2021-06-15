@@ -24,12 +24,12 @@ AUG:
         CONTRAST_JITTER_RATIO: 0.5
         SATURATION_JITTER_RATIO: 0.5
 DATASET:
-    DATA_DIR: 'REPO_ROOT_PATH/data/training_data_example/'
+    DATA_DIR: '/data2/tusimple/lane_detection/dataset/training'
     IMAGE_TYPE: 'rgb'  # choice rgb or rgba
     NUM_CLASSES: 2
-    TEST_FILE_LIST: 'REPO_ROOT_PATH/data/training_data_example/test.txt'
-    TRAIN_FILE_LIST: 'REPO_ROOT_PATH/data/training_data_example/train.txt'
-    VAL_FILE_LIST: 'REPO_ROOT_PATH/data/training_data_example/val.txt'
+    TEST_FILE_LIST: '/data2/tusimple/lane_detection/dataset/training/test.txt'
+    TRAIN_FILE_LIST: '/data2/tusimple/lane_detection/dataset/training/train.txt'
+    VAL_FILE_LIST: '/data2/tusimple/lane_detection/dataset/training/val.txt'
     IGNORE_INDEX: 255
     PADDING_VALUE: [127.5, 127.5, 127.5]
     MEAN_VALUE: [0.5, 0.5, 0.5]
@@ -40,7 +40,7 @@ FREEZE:
     PARAMS_FILENAME: 'params'
 MODEL:
     MODEL_NAME: 'lanenet'
-    FRONT_END: 'bisenetv2'
+    FRONT_END: 'vgg'
     EMBEDDING_FEATS_DIMS: 4
     BISENETV2:
         GE_EXPAND_RATIO: 6
@@ -56,7 +56,7 @@ TRAIN:
         ENABLE: False
         SNAPSHOT_PATH: ''
     SNAPSHOT_EPOCH: 8
-    BATCH_SIZE: 32
+    BATCH_SIZE: 16
     VAL_BATCH_SIZE: 4
     EPOCH_NUMS: 905
     WARM_UP:
@@ -69,7 +69,7 @@ TRAIN:
         EPOCH: 1
     MULTI_GPU:
         ENABLE: True
-        GPU_DEVICES: ['0', '1']
+        GPU_DEVICES: ['0', '1', '2', '3']
         CHIEF_DEVICE_INDEX: 0
 SOLVER:
     LR: 0.001

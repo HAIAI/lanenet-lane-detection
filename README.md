@@ -30,7 +30,7 @@ download the model and put them in folder model/tusimple_lanenet/
 You can test a single image on the trained model as follows
 
 ```
-python tools/test_lanenet.py --weights_path /PATH/TO/YOUR/CKPT_FILE_PATH 
+python test_lanenet.py --weights_path /PATH/TO/YOUR/CKPT_FILE_PATH 
 --image_path ./data/tusimple_test_image/0.jpg
 ```
 The results are as follows:
@@ -81,7 +81,7 @@ All your training image will be scaled into the same scale according to the conf
 Use the script here to generate the tensorflow records file
 
 ```
-python tools/make_tusimple_tfrecords.py 
+python make_tusimple_tfrecords.py 
 ```
 
 #### Train model
@@ -93,7 +93,7 @@ script to load your own pretrained parameters or you can implement your own base
 You may call the following script to train your own model
 
 ```
-python tools/train_lanenet_tusimple.py 
+python train_lanenet_tusimple.py 
 ```
 
 You may monitor the training process using tensorboard tools
@@ -129,7 +129,7 @@ file to your local disk. Then run the following command to generate the
 training samples and the train.txt file.
 
 ```angular2html
-python tools/generate_tusimple_dataset.py --src_dir path/to/your/unzipped/file
+python generate_tusimple_dataset.py --src_dir path/to/your/unzipped/file
 ```
 
 The script will make the train folder and the test folder. The training 
@@ -189,7 +189,3 @@ The lanenet project refers to the following projects:
 - [SimpleDBSCAN](https://github.com/CallmeNezha/SimpleDBSCAN)
 - [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)
 
-## Contact
-
-Scan the following QR to disscuss :)
-![qr](./data/source_image/qr.jpg)

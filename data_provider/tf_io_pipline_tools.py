@@ -14,8 +14,8 @@ import os.path as ops
 import cv2
 import glog as log
 import numpy as np
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from local_utils.config_utils import parse_config_utils
 
 CFG = parse_config_utils.lanenet_cfg
